@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="myapp.controller.Main"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <SplitApp>
+        <masterPages>
+            <Page title="Employees">
+                <List
+                    id="employeeList"
+                    items="{EmployeeStatus>/Employees}"
+                    mode="SingleSelectMaster"
+                    selectionChange=".onEmployeeSelect">
+                    <StandardListItem
+                        title="{EmployeeStatus>Name}" />
+                </List>
+            </Page>
+        </masterPages>
+
+        <detailPages>
+            <Page title="Employee Details">
+                <VBox class="sapUiSmallMargin">
+                    <Text text="Name: {/Name}" />
+                    <Text text="Email: {/EmailID}" />
+                    <Text text="Mobile: {/MobileNumber}" />
+                    <Text text="Experience: {/Experience}" />
+                    <Text text="Skills: {/Skills}" />
+                    <Text text="CTC: {/CurrentCTC}" />
+                    <Text text="Expected: {/ExpectedCTC}" />
+                    <Text text="Notice Period: {/NoticePeriod}" />
+                    <Text text="Available for Interview: {/AvailableForInterview}" />
+                    <Text text="Country: {/Country}" />
+                    <Text text="Remark: {/Remark}" />
+                </VBox>
+            </Page>
+        </detailPages>
+    </SplitApp>
+
+</mvc:View>
