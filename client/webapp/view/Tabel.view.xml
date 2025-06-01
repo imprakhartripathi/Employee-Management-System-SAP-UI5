@@ -1,0 +1,38 @@
+<mvc:View controllerName="your.namespace.controller.TableView"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+
+  <Page title="Employees">
+    <content>
+      <VBox>
+        <Button text="Create New Employee" press="onCreate" class="sapUiSmallMarginBottom"/>
+        <Table id="employeeTable" items="{/employees}" mode="SingleSelectMaster" itemPress="onSelectEmployee">
+          <columns>
+            <Column>
+              <Text text="Name"/>
+            </Column>
+            <Column>
+              <Text text="CTC"/>
+            </Column>
+            <Column>
+              <Text text="Experience"/>
+            </Column>
+            <Column>
+              <Text text="Skills"/>
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{Name}" />
+                <Text text="{CurrentCTC}" />
+                <Text text="{Experience}" />
+                <Text text="{Skills}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

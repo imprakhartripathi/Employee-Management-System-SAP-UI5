@@ -1,0 +1,37 @@
+<mvc:View controllerName="your.namespace.controller.EmployeeDetail" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:layout="sap.ui.layout.form">
+
+    <Page title="Employee Detail">
+        <content>
+            <layout:SimpleForm editable="true" id="form">
+                <Label text="Name" />
+                <Input value="{Name}" />
+
+                <Label text="Email" />
+                <Input value="{EmailID}" />
+
+                <Label text="Skills" />
+                <Input value="{Skills}" />
+
+                <Label text="Experience" />
+                <Input value="{Experience}" />
+
+                <Label text="CTC" />
+                <Input value="{CurrentCTC}" />
+
+                <Label text="Expected CTC" />
+                <Input value="{ExpectedCTC}" />
+
+                <Label text="Mobile" />
+                <Input value="{MobileNumber}" />
+            </layout:SimpleForm>
+
+            <HBox class="sapUiSmallMarginTop">
+                <Button text="Save" press="onSave" type="Emphasized" />
+                <Button text="Delete" press="onDelete" type="Reject" visible="{= !!${_id} }" />
+            </HBox>
+        </content>
+    </Page>
+</mvc:View>
