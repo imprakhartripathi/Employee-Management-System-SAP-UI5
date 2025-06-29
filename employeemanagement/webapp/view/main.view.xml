@@ -1,0 +1,44 @@
+<mvc:View controllerName="employeemanagement.controller.main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="page" title="Employee Management">
+        <content>
+            <VBox>
+                <HBox>
+                    <Button text="Add Employee" press=".onAdd" type="Emphasized"/>
+                    <Button text="Edit Selected" press=".onEdit" enabled="{= !!${viewModel>/selectedEmployee} }"/>
+                    <Button text="Delete Selected" press=".onDelete" enabled="{= !!${viewModel>/selectedEmployee} }"/>
+                </HBox>
+
+                <Table id="employeeTable" items="{/employees}" mode="SingleSelectMaster" selectionChange=".onSelect">
+                    <columns>
+                        <Column>
+                            <Text text="Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Mobile" />
+                        </Column>
+                        <Column>
+                            <Text text="Email" />
+                        </Column>
+                        <Column>
+                            <Text text="Skills" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{Name}" />
+                                <Text text="{MobileNumber}" />
+                                <Text text="{EmailID}" />
+                                <Text text="{Skills}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+
+</mvc:View>

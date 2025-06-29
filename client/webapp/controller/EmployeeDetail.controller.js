@@ -17,7 +17,7 @@ sap.ui.define([
         const model = new JSONModel({});
         this.getView().setModel(model);
       } else {
-        fetch(`/employees/${id}`)
+        fetch(`http://localhost:4200/employees/${id}`)
           .then(res => res.json())
           .then(data => this.getView().setModel(new JSONModel(data)));
       }
@@ -26,7 +26,7 @@ sap.ui.define([
     onSave: function () {
       const data = this.getView().getModel().getData();
       const method = data._id ? "PUT" : "POST";
-      const url = data._id ? `/employees/${data._id}` : `/employees`;
+      const url = data._id ? `http://localhost:4200/employees/${data._id}` : `http://localhost:4200/employees`;
 
       fetch(url, {
         method,
@@ -44,7 +44,7 @@ sap.ui.define([
       const id = this.getView().getModel().getData()._id;
       if (!id) return;
 
-      fetch(`/employees/${id}`, { method: "DELETE" })
+      fetch(`http://localhost:4200/employees/${id}`, { method: "DELETE" })
         .then(() => {
           MessageToast.show("Deleted successfully");
           sap.ui.core.UIComponent.getRouterFor(this).navTo("tableView");
