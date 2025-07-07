@@ -4,8 +4,8 @@
 
     <Page id="page" title="Employee Management">
         <content>
-            <VBox>
-                <HBox>
+            <VBox class="sapUiSmallMargin">
+                <HBox class="sapUiSmallMarginBottom">
                     <Button text="Add Employee" press=".onAdd" type="Emphasized"/>
                     <Button text="Edit Selected" press=".onEdit" enabled="{= !!${viewModel>/selectedEmployee} }"/>
                     <Button text="Delete Selected" press=".onDelete" enabled="{= !!${viewModel>/selectedEmployee} }"/>
@@ -40,5 +40,4 @@
             </VBox>
         </content>
     </Page>
-
 </mvc:View>
